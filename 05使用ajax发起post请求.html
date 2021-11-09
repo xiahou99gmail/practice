@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+</head>
+
+<body>
+    <button>提交数据</button>
+    <script>
+        $(function() {
+            $('button').on('click', function() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://www.liulongbin.top:3006/api/addbook',
+                    data: {
+                        bookname: '高等数学',
+                        author: '未知',
+                        publisher: '上海图书出版社'
+                    },
+                    success: function(theValue) {
+                        console.log(theValue)
+                    }
+
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
